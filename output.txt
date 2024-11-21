@@ -1,0 +1,418 @@
+Training simple model
+=====================================
+Using device: cuda
+c:\Users\kaden\CS 5830\CNNtest\test.py:44: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+c:\Users\kaden\CS 5830\CNNtest\test.py:163: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/50, Train Loss: 160.5713, Val Loss: 1.5176, Val Acc: 44.27%
+Epoch 2/50, Train Loss: 141.0202, Val Loss: 1.4435, Val Acc: 48.58%
+Epoch 3/50, Train Loss: 135.8493, Val Loss: 1.4944, Val Acc: 47.21%
+Epoch 4/50, Train Loss: 133.6471, Val Loss: 1.3472, Val Acc: 51.52%
+Epoch 5/50, Train Loss: 128.1665, Val Loss: 1.3024, Val Acc: 52.16%
+Epoch 6/50, Train Loss: 125.3047, Val Loss: 1.2840, Val Acc: 55.31%
+Epoch 7/50, Train Loss: 122.8019, Val Loss: 1.4829, Val Acc: 44.90%
+Epoch 8/50, Train Loss: 120.5624, Val Loss: 1.5448, Val Acc: 46.37%
+Epoch 9/50, Train Loss: 115.1117, Val Loss: 1.2641, Val Acc: 53.21%
+Epoch 10/50, Train Loss: 114.3148, Val Loss: 1.2533, Val Acc: 55.84%
+Epoch 11/50, Train Loss: 110.9308, Val Loss: 1.6343, Val Acc: 43.22%
+Epoch 12/50, Train Loss: 108.9192, Val Loss: 1.2102, Val Acc: 55.94%
+Epoch 13/50, Train Loss: 105.0807, Val Loss: 1.3279, Val Acc: 52.68%
+Epoch 14/50, Train Loss: 107.8440, Val Loss: 1.2711, Val Acc: 54.36%
+Epoch 15/50, Train Loss: 100.1927, Val Loss: 1.0507, Val Acc: 61.20%
+Epoch 16/50, Train Loss: 101.1662, Val Loss: 1.2839, Val Acc: 56.99%
+Epoch 17/50, Train Loss: 102.3702, Val Loss: 1.1340, Val Acc: 60.36%
+Epoch 18/50, Train Loss: 100.1039, Val Loss: 1.2421, Val Acc: 56.15%
+Epoch 19/50, Train Loss: 98.1829, Val Loss: 1.1714, Val Acc: 56.15%
+Epoch 20/50, Train Loss: 89.2130, Val Loss: 0.9302, Val Acc: 65.83%
+Epoch 21/50, Train Loss: 87.1870, Val Loss: 0.9321, Val Acc: 65.62%
+Epoch 22/50, Train Loss: 85.3995, Val Loss: 0.9559, Val Acc: 65.72%
+Epoch 23/50, Train Loss: 87.3040, Val Loss: 0.8892, Val Acc: 67.82%
+Epoch 24/50, Train Loss: 83.3908, Val Loss: 0.8882, Val Acc: 67.19%
+Epoch 25/50, Train Loss: 81.7701, Val Loss: 0.9260, Val Acc: 66.25%
+Epoch 26/50, Train Loss: 81.2552, Val Loss: 0.9052, Val Acc: 66.14%
+Epoch 27/50, Train Loss: 80.5559, Val Loss: 0.8701, Val Acc: 68.56%
+Epoch 28/50, Train Loss: 81.3752, Val Loss: 0.9502, Val Acc: 66.77%
+Epoch 29/50, Train Loss: 81.0072, Val Loss: 0.8626, Val Acc: 68.45%
+Epoch 30/50, Train Loss: 80.7057, Val Loss: 0.8997, Val Acc: 67.19%
+Epoch 31/50, Train Loss: 81.1585, Val Loss: 0.8597, Val Acc: 68.56%
+Epoch 32/50, Train Loss: 78.4729, Val Loss: 0.8638, Val Acc: 68.45%
+Epoch 33/50, Train Loss: 79.1775, Val Loss: 0.8609, Val Acc: 67.51%
+Epoch 34/50, Train Loss: 77.8709, Val Loss: 0.8208, Val Acc: 69.40%
+Epoch 35/50, Train Loss: 78.5135, Val Loss: 0.8567, Val Acc: 68.98%
+Epoch 36/50, Train Loss: 77.8809, Val Loss: 0.8510, Val Acc: 67.82%
+Epoch 37/50, Train Loss: 76.1010, Val Loss: 0.8498, Val Acc: 68.35%
+Epoch 38/50, Train Loss: 76.9485, Val Loss: 0.8523, Val Acc: 69.09%
+Epoch 39/50, Train Loss: 75.5530, Val Loss: 0.8434, Val Acc: 70.03%
+Epoch 40/50, Train Loss: 75.3234, Val Loss: 0.8182, Val Acc: 71.19%
+Epoch 41/50, Train Loss: 77.5675, Val Loss: 0.8256, Val Acc: 68.66%
+Epoch 42/50, Train Loss: 74.9733, Val Loss: 0.8269, Val Acc: 69.72%
+Epoch 43/50, Train Loss: 78.7373, Val Loss: 0.8265, Val Acc: 71.50%
+Epoch 44/50, Train Loss: 75.7947, Val Loss: 0.8139, Val Acc: 70.45%
+Epoch 45/50, Train Loss: 75.1098, Val Loss: 0.8149, Val Acc: 69.82%
+Epoch 46/50, Train Loss: 76.4820, Val Loss: 0.8318, Val Acc: 69.40%
+Epoch 47/50, Train Loss: 75.3754, Val Loss: 0.8385, Val Acc: 69.61%
+Epoch 48/50, Train Loss: 72.9729, Val Loss: 0.8009, Val Acc: 70.77%
+Epoch 49/50, Train Loss: 73.4736, Val Loss: 0.8404, Val Acc: 68.77%
+Epoch 50/50, Train Loss: 74.2201, Val Loss: 0.8112, Val Acc: 70.14%
+                     precision    recall  f1-score   support
+
+          Cardboard       0.82      0.74      0.78        92
+      Food Organics       0.83      0.82      0.82        82
+              Glass       0.66      0.73      0.69        84
+              Metal       0.79      0.73      0.76       158
+Miscellaneous Trash       0.44      0.47      0.45        99
+              Paper       0.78      0.64      0.70       100
+            Plastic       0.64      0.72      0.68       185
+      Textile Trash       0.67      0.48      0.56        64
+         Vegetation       0.81      0.97      0.88        87
+
+           accuracy                           0.71       951
+          macro avg       0.72      0.70      0.70       951
+       weighted avg       0.71      0.71      0.71       951
+
+Training resnet model
+=====================================
+Using device: cuda
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+c:\Users\kaden\CS 5830\CNNtest\test.py:44: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+c:\Users\kaden\CS 5830\CNNtest\test.py:163: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/50, Train Loss: 191.5886, Val Loss: 2.0112, Val Acc: 22.71%
+Epoch 2/50, Train Loss: 182.5354, Val Loss: 1.9641, Val Acc: 25.87%
+Epoch 3/50, Train Loss: 178.7216, Val Loss: 1.8935, Val Acc: 35.33%
+Epoch 4/50, Train Loss: 173.6532, Val Loss: 1.8297, Val Acc: 34.60%
+Epoch 5/50, Train Loss: 172.0442, Val Loss: 1.7998, Val Acc: 34.60%
+Epoch 6/50, Train Loss: 167.1636, Val Loss: 1.7567, Val Acc: 35.75%
+Epoch 7/50, Train Loss: 165.1762, Val Loss: 1.7628, Val Acc: 37.01%
+Epoch 8/50, Train Loss: 163.1274, Val Loss: 1.7521, Val Acc: 35.12%
+Epoch 9/50, Train Loss: 161.9616, Val Loss: 1.6952, Val Acc: 37.96%
+Epoch 10/50, Train Loss: 164.9783, Val Loss: 1.7307, Val Acc: 36.59%
+Epoch 11/50, Train Loss: 159.3407, Val Loss: 1.7002, Val Acc: 37.43%
+Epoch 12/50, Train Loss: 158.9730, Val Loss: 1.6532, Val Acc: 39.54%
+Epoch 13/50, Train Loss: 155.2797, Val Loss: 1.7043, Val Acc: 37.75%
+Epoch 14/50, Train Loss: 157.5586, Val Loss: 1.6514, Val Acc: 38.91%
+Epoch 15/50, Train Loss: 156.8252, Val Loss: 1.6245, Val Acc: 41.32%
+Epoch 16/50, Train Loss: 156.4918, Val Loss: 1.6940, Val Acc: 38.28%
+Epoch 17/50, Train Loss: 156.5684, Val Loss: 1.6421, Val Acc: 39.12%
+Epoch 18/50, Train Loss: 155.8299, Val Loss: 1.6479, Val Acc: 39.75%
+Epoch 19/50, Train Loss: 156.1396, Val Loss: 1.6266, Val Acc: 40.27%
+Epoch 20/50, Train Loss: 152.0163, Val Loss: 1.6169, Val Acc: 42.27%
+Epoch 21/50, Train Loss: 148.7167, Val Loss: 1.5877, Val Acc: 42.17%
+Epoch 22/50, Train Loss: 148.5176, Val Loss: 1.5877, Val Acc: 42.38%
+Epoch 23/50, Train Loss: 148.4190, Val Loss: 1.5848, Val Acc: 43.32%
+Epoch 24/50, Train Loss: 147.8535, Val Loss: 1.5963, Val Acc: 42.17%
+Epoch 25/50, Train Loss: 148.6327, Val Loss: 1.5833, Val Acc: 43.85%
+Epoch 26/50, Train Loss: 147.8762, Val Loss: 1.5632, Val Acc: 42.80%
+Epoch 27/50, Train Loss: 147.0561, Val Loss: 1.5728, Val Acc: 44.16%
+Epoch 28/50, Train Loss: 147.2016, Val Loss: 1.5613, Val Acc: 42.80%
+Epoch 29/50, Train Loss: 148.5691, Val Loss: 1.5747, Val Acc: 43.11%
+Epoch 30/50, Train Loss: 148.2906, Val Loss: 1.5702, Val Acc: 43.43%
+Epoch 31/50, Train Loss: 148.2743, Val Loss: 1.5581, Val Acc: 43.85%
+Epoch 32/50, Train Loss: 146.3501, Val Loss: 1.5673, Val Acc: 42.06%
+Epoch 33/50, Train Loss: 148.0377, Val Loss: 1.5498, Val Acc: 43.43%
+Epoch 34/50, Train Loss: 147.8021, Val Loss: 1.5463, Val Acc: 45.01%
+Epoch 35/50, Train Loss: 147.5519, Val Loss: 1.5577, Val Acc: 42.59%
+Epoch 36/50, Train Loss: 146.7445, Val Loss: 1.5511, Val Acc: 43.95%
+Epoch 37/50, Train Loss: 147.1808, Val Loss: 1.5725, Val Acc: 43.74%
+Epoch 38/50, Train Loss: 146.2996, Val Loss: 1.5559, Val Acc: 42.59%
+Epoch 39/50, Train Loss: 146.5995, Val Loss: 1.5456, Val Acc: 43.64%
+Epoch 40/50, Train Loss: 146.5451, Val Loss: 1.5555, Val Acc: 44.06%
+Epoch 41/50, Train Loss: 146.2048, Val Loss: 1.5575, Val Acc: 43.85%
+Epoch 42/50, Train Loss: 146.3754, Val Loss: 1.5534, Val Acc: 41.96%
+Epoch 43/50, Train Loss: 145.7086, Val Loss: 1.5502, Val Acc: 43.53%
+Epoch 44/50, Train Loss: 146.7984, Val Loss: 1.5624, Val Acc: 41.96%
+Epoch 45/50, Train Loss: 145.3560, Val Loss: 1.5512, Val Acc: 43.01%
+Epoch 46/50, Train Loss: 146.8271, Val Loss: 1.5588, Val Acc: 43.64%
+Early stopping triggered.
+Epoch 47/50, Train Loss: 145.8869, Val Loss: 1.5597, Val Acc: 43.95%
+Early stopping triggered.
+Epoch 48/50, Train Loss: 146.2159, Val Loss: 1.5573, Val Acc: 41.75%
+Early stopping triggered.
+Epoch 49/50, Train Loss: 146.1052, Val Loss: 1.5438, Val Acc: 44.27%
+Epoch 50/50, Train Loss: 146.2344, Val Loss: 1.5474, Val Acc: 42.06%
+                     precision    recall  f1-score   support
+
+          Cardboard       0.69      0.38      0.49        92
+      Food Organics       0.38      0.23      0.29        82
+              Glass       0.50      0.50      0.50        84
+              Metal       0.43      0.63      0.51       158
+Miscellaneous Trash       0.27      0.11      0.16        99
+              Paper       0.37      0.07      0.12       100
+            Plastic       0.41      0.71      0.52       185
+      Textile Trash       0.54      0.11      0.18        64
+         Vegetation       0.48      0.77      0.59        87
+
+           accuracy                           0.44       951
+          macro avg       0.45      0.39      0.37       951
+       weighted avg       0.44      0.44      0.40       951
+
+Training efficientnet model
+=====================================
+Using device: cuda
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+c:\Users\kaden\CS 5830\CNNtest\test.py:44: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+c:\Users\kaden\CS 5830\CNNtest\test.py:163: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/50, Train Loss: 197.2529, Val Loss: 2.1279, Val Acc: 18.72%
+Epoch 2/50, Train Loss: 192.2423, Val Loss: 2.1041, Val Acc: 19.66%
+Epoch 3/50, Train Loss: 189.8338, Val Loss: 2.1116, Val Acc: 22.50%
+Epoch 4/50, Train Loss: 189.1128, Val Loss: 2.0632, Val Acc: 21.24%
+Epoch 5/50, Train Loss: 186.1497, Val Loss: 2.0475, Val Acc: 22.19%
+Epoch 6/50, Train Loss: 186.7298, Val Loss: 2.0482, Val Acc: 24.19%
+Epoch 7/50, Train Loss: 183.5746, Val Loss: 2.0218, Val Acc: 26.29%
+Epoch 8/50, Train Loss: 184.5009, Val Loss: 2.0362, Val Acc: 22.82%
+Epoch 9/50, Train Loss: 183.5328, Val Loss: 1.9968, Val Acc: 24.29%
+Epoch 10/50, Train Loss: 182.5901, Val Loss: 1.9910, Val Acc: 25.97%
+Epoch 11/50, Train Loss: 182.2262, Val Loss: 1.9863, Val Acc: 24.61%
+Epoch 12/50, Train Loss: 181.8958, Val Loss: 1.9809, Val Acc: 25.45%
+Epoch 13/50, Train Loss: 183.6017, Val Loss: 1.9846, Val Acc: 23.87%
+Epoch 14/50, Train Loss: 182.0326, Val Loss: 2.0049, Val Acc: 25.66%
+Epoch 15/50, Train Loss: 181.9827, Val Loss: 1.9648, Val Acc: 24.40%
+Epoch 16/50, Train Loss: 182.6121, Val Loss: 1.9764, Val Acc: 25.13%
+Epoch 17/50, Train Loss: 182.3681, Val Loss: 1.9962, Val Acc: 26.29%
+Epoch 18/50, Train Loss: 183.1397, Val Loss: 1.9780, Val Acc: 26.18%
+Epoch 19/50, Train Loss: 180.5501, Val Loss: 1.9681, Val Acc: 24.92%
+Epoch 20/50, Train Loss: 181.7426, Val Loss: 1.9569, Val Acc: 23.66%
+Epoch 21/50, Train Loss: 179.5002, Val Loss: 1.9740, Val Acc: 23.97%
+Epoch 22/50, Train Loss: 179.8507, Val Loss: 1.9605, Val Acc: 25.55%
+Epoch 23/50, Train Loss: 179.3194, Val Loss: 1.9405, Val Acc: 26.71%
+Epoch 24/50, Train Loss: 179.6382, Val Loss: 1.9454, Val Acc: 26.81%
+Epoch 25/50, Train Loss: 180.1148, Val Loss: 1.9627, Val Acc: 26.08%
+Epoch 26/50, Train Loss: 179.9383, Val Loss: 1.9802, Val Acc: 24.61%
+Epoch 27/50, Train Loss: 178.8557, Val Loss: 1.9620, Val Acc: 25.45%
+Epoch 28/50, Train Loss: 179.1128, Val Loss: 1.9582, Val Acc: 24.50%
+Epoch 29/50, Train Loss: 179.7276, Val Loss: 1.9611, Val Acc: 23.34%
+Epoch 30/50, Train Loss: 178.6518, Val Loss: 1.9216, Val Acc: 27.23%
+Epoch 31/50, Train Loss: 179.3390, Val Loss: 1.9528, Val Acc: 24.82%
+Epoch 32/50, Train Loss: 179.1484, Val Loss: 1.9623, Val Acc: 25.03%
+Epoch 33/50, Train Loss: 179.2024, Val Loss: 1.9483, Val Acc: 26.81%
+Epoch 34/50, Train Loss: 177.2681, Val Loss: 1.9515, Val Acc: 26.39%
+Epoch 35/50, Train Loss: 178.6219, Val Loss: 1.9345, Val Acc: 25.97%
+Epoch 36/50, Train Loss: 179.3190, Val Loss: 1.9464, Val Acc: 26.39%
+Epoch 37/50, Train Loss: 178.1865, Val Loss: 1.9551, Val Acc: 25.34%
+Early stopping triggered.
+Epoch 38/50, Train Loss: 178.0590, Val Loss: 1.9484, Val Acc: 26.18%
+Early stopping triggered.
+Epoch 39/50, Train Loss: 179.2868, Val Loss: 1.9539, Val Acc: 25.97%
+Early stopping triggered.
+Epoch 40/50, Train Loss: 178.5653, Val Loss: 1.9546, Val Acc: 25.87%
+Early stopping triggered.
+Epoch 41/50, Train Loss: 179.1069, Val Loss: 1.9478, Val Acc: 26.71%
+Early stopping triggered.
+Epoch 42/50, Train Loss: 177.9296, Val Loss: 1.9499, Val Acc: 26.92%
+Early stopping triggered.
+Epoch 43/50, Train Loss: 178.8058, Val Loss: 1.9523, Val Acc: 25.87%
+Early stopping triggered.
+Epoch 44/50, Train Loss: 178.8940, Val Loss: 1.9446, Val Acc: 24.19%
+Early stopping triggered.
+Epoch 45/50, Train Loss: 178.7048, Val Loss: 1.9491, Val Acc: 25.66%
+Early stopping triggered.
+Epoch 46/50, Train Loss: 178.0242, Val Loss: 1.9557, Val Acc: 24.92%
+Early stopping triggered.
+Epoch 47/50, Train Loss: 178.5630, Val Loss: 1.9454, Val Acc: 25.45%
+Early stopping triggered.
+Epoch 48/50, Train Loss: 178.5119, Val Loss: 1.9510, Val Acc: 25.76%
+Early stopping triggered.
+Epoch 49/50, Train Loss: 178.2888, Val Loss: 1.9466, Val Acc: 25.55%
+Early stopping triggered.
+Epoch 50/50, Train Loss: 179.4353, Val Loss: 1.9347, Val Acc: 27.23%
+Early stopping triggered.
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+                     precision    recall  f1-score   support
+
+          Cardboard       0.00      0.00      0.00        92
+      Food Organics       0.26      0.20      0.22        82
+              Glass       0.00      0.00      0.00        84
+              Metal       0.31      0.31      0.31       158
+Miscellaneous Trash       0.00      0.00      0.00        99
+              Paper       0.00      0.00      0.00       100
+            Plastic       0.23      0.68      0.35       185
+      Textile Trash       0.00      0.00      0.00        64
+         Vegetation       0.32      0.71      0.44        87
+
+           accuracy                           0.26       951
+          macro avg       0.12      0.21      0.15       951
+       weighted avg       0.15      0.26      0.18       951
+
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\metrics\_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Training resnetpre model
+=====================================
+Using device: cuda
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+c:\Users\kaden\CS 5830\CNNtest\test.py:44: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+c:\Users\kaden\CS 5830\CNNtest\test.py:163: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/50, Train Loss: 154.4543, Val Loss: 1.2529, Val Acc: 60.88%
+Epoch 2/50, Train Loss: 107.7052, Val Loss: 0.9894, Val Acc: 66.25%
+Epoch 3/50, Train Loss: 95.7631, Val Loss: 0.8796, Val Acc: 68.35%
+Epoch 4/50, Train Loss: 92.6662, Val Loss: 0.8131, Val Acc: 72.24%
+Epoch 5/50, Train Loss: 83.2735, Val Loss: 0.8319, Val Acc: 70.66%
+Epoch 6/50, Train Loss: 80.9164, Val Loss: 0.8400, Val Acc: 68.03%
+Epoch 7/50, Train Loss: 84.7139, Val Loss: 0.7617, Val Acc: 72.77%
+Epoch 8/50, Train Loss: 75.8646, Val Loss: 0.7007, Val Acc: 75.18%
+Epoch 9/50, Train Loss: 78.3155, Val Loss: 0.7032, Val Acc: 74.55%
+Epoch 10/50, Train Loss: 74.2177, Val Loss: 0.6702, Val Acc: 77.39%
+Epoch 11/50, Train Loss: 75.2671, Val Loss: 0.6889, Val Acc: 74.87%
+Epoch 12/50, Train Loss: 68.4175, Val Loss: 0.6807, Val Acc: 73.40%
+Epoch 13/50, Train Loss: 67.8545, Val Loss: 0.6375, Val Acc: 77.50%
+Epoch 14/50, Train Loss: 66.7898, Val Loss: 0.6147, Val Acc: 78.65%
+Epoch 15/50, Train Loss: 66.9401, Val Loss: 0.6214, Val Acc: 78.34%
+Epoch 16/50, Train Loss: 71.7850, Val Loss: 0.6301, Val Acc: 77.29%
+Epoch 17/50, Train Loss: 68.4151, Val Loss: 0.6441, Val Acc: 77.18%
+Epoch 18/50, Train Loss: 66.8937, Val Loss: 0.6310, Val Acc: 78.23%
+Epoch 19/50, Train Loss: 60.9821, Val Loss: 0.5637, Val Acc: 80.13%
+Epoch 20/50, Train Loss: 56.0567, Val Loss: 0.5794, Val Acc: 78.55%
+Epoch 21/50, Train Loss: 54.2319, Val Loss: 0.5559, Val Acc: 79.81%
+Epoch 22/50, Train Loss: 55.6236, Val Loss: 0.5796, Val Acc: 78.97%
+Epoch 23/50, Train Loss: 53.7898, Val Loss: 0.5710, Val Acc: 79.18%
+Epoch 24/50, Train Loss: 52.6324, Val Loss: 0.5577, Val Acc: 81.49%
+Epoch 25/50, Train Loss: 54.0374, Val Loss: 0.5474, Val Acc: 80.34%
+Epoch 26/50, Train Loss: 53.6573, Val Loss: 0.5749, Val Acc: 78.97%
+Epoch 27/50, Train Loss: 53.2192, Val Loss: 0.5420, Val Acc: 80.97%
+Epoch 28/50, Train Loss: 54.5735, Val Loss: 0.5583, Val Acc: 77.81%
+Epoch 29/50, Train Loss: 52.3940, Val Loss: 0.5619, Val Acc: 79.92%
+Epoch 30/50, Train Loss: 52.8759, Val Loss: 0.5479, Val Acc: 80.44%
+Epoch 31/50, Train Loss: 56.2029, Val Loss: 0.5493, Val Acc: 79.60%
+Epoch 32/50, Train Loss: 55.9924, Val Loss: 0.5377, Val Acc: 79.39%
+Epoch 33/50, Train Loss: 51.5214, Val Loss: 0.5451, Val Acc: 79.71%
+Epoch 34/50, Train Loss: 53.0713, Val Loss: 0.5417, Val Acc: 80.86%
+Epoch 35/50, Train Loss: 56.3144, Val Loss: 0.5407, Val Acc: 80.76%
+Epoch 36/50, Train Loss: 49.6244, Val Loss: 0.5470, Val Acc: 80.86%
+Epoch 37/50, Train Loss: 52.5357, Val Loss: 0.5691, Val Acc: 79.18%
+Epoch 38/50, Train Loss: 53.1401, Val Loss: 0.5521, Val Acc: 79.18%
+Epoch 39/50, Train Loss: 50.0777, Val Loss: 0.5523, Val Acc: 80.23%
+Early stopping triggered.
+Epoch 40/50, Train Loss: 52.1436, Val Loss: 0.5527, Val Acc: 81.07%
+Early stopping triggered.
+Epoch 41/50, Train Loss: 50.9271, Val Loss: 0.5491, Val Acc: 79.92%
+Early stopping triggered.
+Epoch 42/50, Train Loss: 50.6407, Val Loss: 0.5622, Val Acc: 79.18%
+Early stopping triggered.
+Epoch 43/50, Train Loss: 53.3565, Val Loss: 0.5509, Val Acc: 79.28%
+Early stopping triggered.
+Epoch 44/50, Train Loss: 57.2500, Val Loss: 0.5261, Val Acc: 80.65%
+Epoch 45/50, Train Loss: 50.6029, Val Loss: 0.5497, Val Acc: 80.76%
+Epoch 46/50, Train Loss: 54.5965, Val Loss: 0.5575, Val Acc: 79.71%
+Epoch 47/50, Train Loss: 49.6198, Val Loss: 0.5321, Val Acc: 81.81%
+Epoch 48/50, Train Loss: 51.5761, Val Loss: 0.5382, Val Acc: 80.55%
+Epoch 49/50, Train Loss: 51.4997, Val Loss: 0.5267, Val Acc: 80.23%
+Epoch 50/50, Train Loss: 52.9234, Val Loss: 0.5502, Val Acc: 79.71%
+                     precision    recall  f1-score   support
+
+          Cardboard       0.82      0.83      0.82        92
+      Food Organics       0.92      0.93      0.92        82
+              Glass       0.94      0.76      0.84        84
+              Metal       0.81      0.84      0.83       158
+Miscellaneous Trash       0.70      0.58      0.63        99
+              Paper       0.89      0.81      0.85       100
+            Plastic       0.74      0.83      0.79       185
+      Textile Trash       0.77      0.80      0.78        64
+         Vegetation       0.89      1.00      0.94        87
+
+           accuracy                           0.82       951
+          macro avg       0.83      0.82      0.82       951
+       weighted avg       0.82      0.82      0.82       951
+
+Training efficientnetpre model
+=====================================
+Using device: cuda
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+C:\Users\kaden\AppData\Local\Programs\Python\Python312\Lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=EfficientNet_B0_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B0_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+c:\Users\kaden\CS 5830\CNNtest\test.py:44: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler()
+c:\Users\kaden\CS 5830\CNNtest\test.py:163: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/50, Train Loss: 120.8481, Val Loss: 0.7935, Val Acc: 73.29%
+Epoch 2/50, Train Loss: 77.7795, Val Loss: 0.6098, Val Acc: 78.13%
+Epoch 3/50, Train Loss: 65.2791, Val Loss: 0.5707, Val Acc: 79.71%
+Epoch 4/50, Train Loss: 61.0588, Val Loss: 0.5174, Val Acc: 81.49%
+Epoch 5/50, Train Loss: 58.4723, Val Loss: 0.4793, Val Acc: 83.07%
+Epoch 6/50, Train Loss: 57.3096, Val Loss: 0.4738, Val Acc: 82.75%
+Epoch 7/50, Train Loss: 52.7650, Val Loss: 0.4673, Val Acc: 82.33%
+Epoch 8/50, Train Loss: 50.0925, Val Loss: 0.4681, Val Acc: 83.60%
+Epoch 9/50, Train Loss: 48.4671, Val Loss: 0.4121, Val Acc: 84.23%
+Epoch 10/50, Train Loss: 47.1267, Val Loss: 0.4114, Val Acc: 85.07%
+Epoch 11/50, Train Loss: 47.4346, Val Loss: 0.4027, Val Acc: 86.01%
+Epoch 12/50, Train Loss: 42.9996, Val Loss: 0.3963, Val Acc: 84.86%
+Epoch 13/50, Train Loss: 45.6261, Val Loss: 0.3795, Val Acc: 86.23%
+Epoch 14/50, Train Loss: 40.2526, Val Loss: 0.3698, Val Acc: 86.86%
+Epoch 15/50, Train Loss: 39.5684, Val Loss: 0.3617, Val Acc: 87.59%
+Epoch 16/50, Train Loss: 42.0575, Val Loss: 0.3601, Val Acc: 88.12%
+Epoch 17/50, Train Loss: 39.8348, Val Loss: 0.3716, Val Acc: 87.07%
+Epoch 18/50, Train Loss: 39.9655, Val Loss: 0.3483, Val Acc: 87.28%
+Epoch 19/50, Train Loss: 41.3343, Val Loss: 0.3609, Val Acc: 86.54%
+Epoch 20/50, Train Loss: 36.5689, Val Loss: 0.3348, Val Acc: 87.91%
+Epoch 21/50, Train Loss: 35.1981, Val Loss: 0.3369, Val Acc: 87.91%
+Epoch 22/50, Train Loss: 34.6987, Val Loss: 0.3451, Val Acc: 88.12%
+Epoch 23/50, Train Loss: 31.8197, Val Loss: 0.3295, Val Acc: 87.70%
+Epoch 24/50, Train Loss: 33.3459, Val Loss: 0.3130, Val Acc: 88.54%
+Epoch 25/50, Train Loss: 33.9550, Val Loss: 0.3006, Val Acc: 89.06%
+Epoch 26/50, Train Loss: 35.5897, Val Loss: 0.2979, Val Acc: 90.33%
+Epoch 27/50, Train Loss: 32.1295, Val Loss: 0.3162, Val Acc: 88.85%
+Epoch 28/50, Train Loss: 32.1534, Val Loss: 0.3182, Val Acc: 89.06%
+Epoch 29/50, Train Loss: 31.4615, Val Loss: 0.3000, Val Acc: 89.59%
+Epoch 30/50, Train Loss: 30.6126, Val Loss: 0.3028, Val Acc: 89.70%
+Epoch 31/50, Train Loss: 27.1402, Val Loss: 0.2923, Val Acc: 90.12%
+Epoch 32/50, Train Loss: 25.1387, Val Loss: 0.2778, Val Acc: 90.54%
+Epoch 33/50, Train Loss: 26.1111, Val Loss: 0.2973, Val Acc: 89.91%
+Epoch 34/50, Train Loss: 25.5178, Val Loss: 0.3098, Val Acc: 89.06%
+Epoch 35/50, Train Loss: 25.2785, Val Loss: 0.2951, Val Acc: 89.70%
+Epoch 36/50, Train Loss: 26.8419, Val Loss: 0.2989, Val Acc: 89.59%
+Epoch 37/50, Train Loss: 28.6577, Val Loss: 0.3025, Val Acc: 89.27%
+Epoch 38/50, Train Loss: 24.9410, Val Loss: 0.2941, Val Acc: 89.06%
+Epoch 39/50, Train Loss: 26.3373, Val Loss: 0.2949, Val Acc: 89.27%
+Early stopping triggered.
+Epoch 40/50, Train Loss: 24.9582, Val Loss: 0.2819, Val Acc: 90.12%
+Early stopping triggered.
+Epoch 41/50, Train Loss: 25.7076, Val Loss: 0.2823, Val Acc: 90.22%
+Early stopping triggered.
+Epoch 42/50, Train Loss: 24.8405, Val Loss: 0.3217, Val Acc: 88.96%
+Early stopping triggered.
+Epoch 43/50, Train Loss: 26.2058, Val Loss: 0.2736, Val Acc: 90.12%
+Epoch 44/50, Train Loss: 24.7043, Val Loss: 0.3030, Val Acc: 88.96%
+Epoch 45/50, Train Loss: 26.2177, Val Loss: 0.2735, Val Acc: 90.54%
+Epoch 46/50, Train Loss: 25.1637, Val Loss: 0.2858, Val Acc: 89.80%
+Epoch 47/50, Train Loss: 25.8655, Val Loss: 0.2866, Val Acc: 90.12%
+Epoch 48/50, Train Loss: 26.8848, Val Loss: 0.2840, Val Acc: 88.85%
+Epoch 49/50, Train Loss: 26.0278, Val Loss: 0.2686, Val Acc: 90.12%
+Epoch 50/50, Train Loss: 26.6790, Val Loss: 0.2981, Val Acc: 89.17%
+                     precision    recall  f1-score   support
+
+          Cardboard       0.86      0.88      0.87        92
+      Food Organics       0.96      0.96      0.96        82
+              Glass       0.89      0.85      0.87        84
+              Metal       0.82      0.92      0.87       158
+Miscellaneous Trash       0.85      0.77      0.81        99
+              Paper       0.88      0.87      0.87       100
+            Plastic       0.88      0.86      0.87       185
+      Textile Trash       0.95      0.88      0.91        64
+         Vegetation       0.96      0.99      0.97        87
+
+           accuracy                           0.88       951
+          macro avg       0.89      0.89      0.89       951
+       weighted avg       0.89      0.88      0.88       951
