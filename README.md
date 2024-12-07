@@ -11,7 +11,7 @@ Because this is a larger-scale project that required resources from multiple sou
   - `decision_tree.ipynb` generates a selection of decision trees, including SVGs for each
   - `(regular|edge)_(d3|)_dt.png` is an image representation of the generated decision tree
 - CNN
-  - `cnn.ipynb` does the training and testing for all the CNNs.
+  - `do_cnn_models.py` does the training and testing for all the CNNs.
   - `output.txt` is the summary of CNN output
   - `(cnn)_confusion_matrix.png` is the confusion matrix for `cnn`
   - `(cnn)_plot_accuracy.png` plots the accuracy over the course of CNN training
